@@ -161,4 +161,5 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; }
 @media (max-width: 520px) {
   .hero { padding: 48px 0 32px; }
   .site-nav { gap: 14px; }
+  .site-footer .footer-legal { order: 3; flex-basis: 100%; text-align: center; }
 }
