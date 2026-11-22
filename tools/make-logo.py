@@ -9,7 +9,7 @@ vertical axis through the centre (32,32) and viewed by a pinhole camera at dista
     view cone), projected. Off-axis spheres therefore become very slightly oval, as in a photo.
   - Base band: a flat plate in the lyre's plane, every point projected.
 This is the main Cacofone logo. The shapes come from the upright design kept in
-assets/logo-upright.svg (finials, pegs and strings tuned for this view).
+backup/upright-logo/logo-upright.svg (finials, pegs and strings tuned for this view).
 
 Usage: python3 tools/make-logo.py assets/logo.svg"""
 import math, sys
@@ -65,16 +65,20 @@ def sphere(c, r, n=64):
 def ball(x, y, r):
     return [sphere(world(x, y), r)]
 
-def rod(src, diameter):
-    """Exact tube silhouette along a centre line, with spherical (round) ends."""
-    r = diameter / 2
+def rod(src, diameter, end_cap=True):
+    """Exact tube silhouette along a centre line, with spherical (round) ends.
+    diameter is a number, or a list with one value per centre-line point (a tapered rod)."""
+    R = [d / 2 for d in diameter] if isinstance(diameter, list) else [diameter / 2] * len(src)
     W = [world(x, y) for x, y in src]
     left, right = [], []
     for i, p in enumerate(W):
         t = unit(sub(W[min(i+1, len(W)-1)], W[max(i-1, 0)]))
         n = unit(cross(t, sub(p, CAM)))
-        left.append(P(add(p, mul(n, r)))); right.append(P(sub(p, mul(n, r))))
-    return [orient(left + right[::-1]), sphere(W[0], r), sphere(W[-1], r)]
+        left.append(P(add(p, mul(n, R[i])))); right.append(P(sub(p, mul(n, R[i]))))
+    rings = [orient(left + right[::-1]), sphere(W[0], R[0])]
+    if end_cap:
+        rings.append(sphere(W[-1], R[-1]))
+    return rings
 
 def plate_rim(src, width):
     n = len(src); h = width / 2; outer, inner = [], []
@@ -91,12 +95,23 @@ def plate_rim(src, width):
 elements = []   # (rings, attrs)
 for s in (1, -1):
     m = (lambda x: x) if s == 1 else (lambda x: 64 - x)
-    end = 22.6 if s == 1 else 41.4
-    pts = line((m(20), 15.5), (m(20), 18), 6)[:-1] \
-        + cubic((m(20), 18), (m(20.3), 23), (m(21), 28.5), (m(18), 32)) \
-        + cubic((m(18), 32), (m(12), 40), (m(15), 47), (end, 48.9))[1:]
-    elements.append((rod(pts, 3.4), ''))
-elements.append((rod(line((20.2, 22.5), (43.8, 22.5), 48), 2.6), ''))
+    # The arm passes behind the base band: it keeps its full width and is cut off square at
+    # (24.4,49) / (39.6,49), where the cut lies entirely under the band's solid rim, so the
+    # band covers the end and the arm never shows through the band's open centre.
+    upper = line((m(20), 15.5), (m(20), 18), 6)[:-1] \
+        + cubic((m(20), 18), (m(20.3), 23), (m(21), 28.5), (m(18), 32))
+    lower = cubic((m(18), 32), (m(12), 40), (m(15), 47.5), (m(24.4), 49))[1:]
+    pts = upper + lower
+    # Thickness along the arm: an even WAIST from the finial down to the S's centre (18,32),
+    # widening to FULL through the lower bulge and staying full until it goes behind the band.
+    WAIST, FULL = 2.5, 3.4
+    def smooth(t): return t * t * (3 - 2 * t)
+    def lower_dia(t):                      # t = 0 at the S's centre, 1 at the band
+        if t < 0.3: return WAIST + (FULL - WAIST) * smooth(t / 0.3)
+        return FULL
+    dia = [WAIST] * len(upper) + [lower_dia((i + 1) / len(lower)) for i in range(len(lower))]
+    elements.append((rod(pts, dia, end_cap=False), ''))
+elements.append((rod(line((20.8, 22.5), (43.2, 22.5), 48), 2.6), ''))
 for x in (26, 30, 34, 38):
     elements.append((ball(x, 19.95, 1.25), ''))
 for x in (20, 44):

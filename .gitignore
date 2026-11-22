@@ -1,0 +1,16 @@
+# Local backups, not published
+backup/
+
+# IDE and editor files (JetBrains, VS Code, vim)
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python (tools/make-logo.py)
+__pycache__/
+*.pyc
