@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cacofone lyre logo">
+  <g id="lyre" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- arms -->
+    <path d="M22 47 C13 39 9 27 13 17 C15.5 11 22.5 11 22 17.5" stroke-width="3.2"/>
+    <path d="M42 47 C51 39 55 27 51 17 C48.5 11 41.5 11 42 17.5" stroke-width="3.2"/>
+    <!-- yoke -->
+    <path d="M10.5 22 H53.5" stroke-width="3.2"/>
+    <!-- strings -->
+    <path d="M25 22 V47 M28.5 22 V47 M32 22 V47 M35.5 22 V47 M39 22 V47" stroke-width="1.4"/>
+    <!-- sound box -->
+    <path d="M18 47 H46 C46 53.5 40 57 32 57 C24 57 18 53.5 18 47 Z" stroke-width="3.2" fill="currentColor" fill-opacity="0.15"/>
+  </g>
+</svg>
