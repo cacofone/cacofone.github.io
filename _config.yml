@@ -1,0 +1,9 @@
+title: Cacofone
+url: https://cacofone.com
+
+# Not published (backup/ is also git-ignored)
+exclude:
+  - backup
+  - README.md
+  - Gemfile
+  - Gemfile.lock

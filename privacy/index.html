@@ -1,29 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Privacy Policy</title>
-  <meta name="description" content="Privacy policy for the website cacofone.com.">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/">
-        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/logo.svg#lyre"></use></svg>
-        Cacofone
-      </a>
-      <nav class="site-nav">
-        <a href="/">Apps</a>
-        <a href="https://github.com/cacofone">GitHub</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
+---
+layout: default
+title: "Privacy Policy"
+description: "Privacy policy for the website cacofone.com."
+noindex: true
+---
     <div class="wrap">
       <article class="prose">
         <!-- DRAFT: settle the TODO comments below before publishing. -->
@@ -41,12 +21,12 @@
         <p>When you open the site, GitHub processes data in its server logs as a technical necessity, in particular your IP address, the date and time of the request, the page requested, and browser and device information. According to GitHub, visitors' IP addresses are logged for security reasons. We do not receive these logs.</p>
         <p>The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is delivering this website securely and reliably.</p>
         <p>Data may be transferred to the USA. The transfer relies on the European Commission's adequacy decision for the EU-US Data Privacy Framework of 10 July 2023, to the extent GitHub is certified under it, and otherwise on standard contractual clauses.</p>
-        <!-- TODO {{CONFIRM-DPF}}: check GitHub's AND Cloudflare's current status on the U.S. Department of Commerce Data Privacy Framework list (dataprivacyframework.gov) and adjust the transfer wording (sections 3-5) to what is true. -->
+        <!-- TODO CONFIRM-DPF: check GitHub's AND Cloudflare's current status on the U.S. Department of Commerce Data Privacy Framework list (dataprivacyframework.gov) and adjust the transfer wording (sections 3-5) to what is true. -->
 
         <h2>4. Domain and DNS at Cloudflare</h2>
         <p>The domain cacofone.com is managed through Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA. Cloudflare answers name lookups (DNS), and may process the IP addresses of the DNS servers that ask. Traffic to the website itself does not pass through Cloudflare. For email forwarding see section 5. Data may also be transferred to the USA here, and what section 3 says applies in the same way.</p>
         <p>The legal basis is Art. 6(1)(f) GDPR (legitimate interest in a working domain).</p>
-        <!-- TODO {{CONFIRM-PROXY}}: the last sentence is only true while the Cloudflare proxy is OFF (grey cloud). Change this section if you ever turn it on. -->
+        <!-- TODO CONFIRM-PROXY: the last sentence is only true while the Cloudflare proxy is OFF (grey cloud). Change this section if you ever turn it on. -->
 
         <h2>5. Contacting us by email</h2>
         <p>If you write to admin@cacofone.com, we process your email address and the content of your message to answer you. The legal basis is Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR for requests about a contract. We delete the data once your request is dealt with and no retention duty applies.</p>
@@ -66,13 +46,3 @@
         <p>If this policy changes, the new version will be posted here with a new date.</p>
       </article>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© 2026 Cacofone</span>
-      <span class="footer-legal"><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a> · <a href="/privacy/">Privacy</a></span>
-    </div>
-  </footer>
-</body>
-</html>

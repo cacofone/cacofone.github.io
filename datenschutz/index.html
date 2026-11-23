@@ -1,29 +1,10 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Datenschutzerklärung</title>
-  <meta name="description" content="Datenschutzerklärung für die Website cacofone.com.">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/">
-        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/logo.svg#lyre"></use></svg>
-        Cacofone
-      </a>
-      <nav class="site-nav">
-        <a href="/">Apps</a>
-        <a href="https://github.com/cacofone">GitHub</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
+---
+layout: default
+title: "Datenschutzerklärung"
+description: "Datenschutzerklärung für die Website cacofone.com."
+lang: de
+noindex: true
+---
     <div class="wrap">
       <article class="prose">
         <!-- DRAFT: settle the TODO comments below before publishing. -->
@@ -41,12 +22,12 @@
         <p>Beim Aufruf der Website verarbeitet GitHub technisch bedingt Daten in Server-Protokollen, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Abrufs, die aufgerufene Seite sowie Browser- und Geräteinformationen. Nach Angaben von GitHub werden IP-Adressen von Besuchern aus Sicherheitsgründen protokolliert. Uns werden diese Protokolle nicht zur Verfügung gestellt.</p>
         <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren und zuverlässigen Bereitstellung dieser Website.</p>
         <p>Dabei können Daten in die USA übermittelt werden. Die Übermittlung stützt sich auf den Angemessenheitsbeschluss der Europäischen Kommission zum EU-US Data Privacy Framework vom 10. Juli 2023, soweit GitHub danach zertifiziert ist, andernfalls auf Standardvertragsklauseln.</p>
-        <!-- TODO {{CONFIRM-DPF}}: check GitHub's AND Cloudflare's current status on the U.S. Department of Commerce Data Privacy Framework list (dataprivacyframework.gov) and adjust the transfer wording (sections 3-5) to what is true. -->
+        <!-- TODO CONFIRM-DPF: check GitHub's AND Cloudflare's current status on the U.S. Department of Commerce Data Privacy Framework list (dataprivacyframework.gov) and adjust the transfer wording (sections 3-5) to what is true. -->
 
         <h2>4. Domain und DNS bei Cloudflare</h2>
         <p>Die Domain cacofone.com wird über Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA verwaltet. Cloudflare beantwortet die Namensauflösung (DNS). Dabei können die IP-Adressen der anfragenden DNS-Server verarbeitet werden. Der Datenverkehr beim Aufruf der Website selbst läuft nicht über Cloudflare. Zur E-Mail-Weiterleitung siehe Abschnitt 5. Auch hier können Daten in die USA übermittelt werden; die Angaben in Abschnitt 3 gelten entsprechend.</p>
         <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionierenden Domain).</p>
-        <!-- TODO {{CONFIRM-PROXY}}: the last sentence is only true while the Cloudflare proxy is OFF (grey cloud). Change this section if you ever turn it on (visitor IPs and the __cf_bm cookie would then be processed by Cloudflare). -->
+        <!-- TODO CONFIRM-PROXY: the last sentence is only true while the Cloudflare proxy is OFF (grey cloud). Change this section if you ever turn it on (visitor IPs and the __cf_bm cookie would then be processed by Cloudflare). -->
 
         <h2>5. Kontakt per E-Mail</h2>
         <p>Wenn Sie uns an admin@cacofone.com schreiben, verarbeiten wir Ihre E-Mail-Adresse und den Inhalt Ihrer Nachricht, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, bei vertragsbezogenen Anfragen Art. 6 Abs. 1 lit. b DSGVO. Wir löschen die Daten, sobald die Anfrage erledigt ist und keine Aufbewahrungspflichten entgegenstehen.</p>
@@ -66,13 +47,3 @@
         <p>Wenn sich diese Erklärung ändert, veröffentlichen wir die neue Fassung an dieser Stelle mit neuem Datum.</p>
       </article>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© 2026 Cacofone</span>
-      <span class="footer-legal"><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a> · <a href="/privacy/">Privacy</a></span>
-    </div>
-  </footer>
-</body>
-</html>

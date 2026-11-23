@@ -14,3 +14,9 @@ Thumbs.db
 # Python (tools/make-logo.py)
 __pycache__/
 *.pyc
+
+# Jekyll
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
